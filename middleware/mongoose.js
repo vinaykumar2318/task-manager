@@ -23,7 +23,6 @@ const connectDB = (handler) => async (req, res) => {
     const opts = {
       bufferCommands: false,
       useNewUrlParser: true,
-      useUnifiedTopology: true,
     };
 
     cached.promise = mongoose.connect(MONGODB_URI, opts)

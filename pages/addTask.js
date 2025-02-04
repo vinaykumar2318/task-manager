@@ -22,7 +22,7 @@ export default function AddTask() {
 
     let response = await res.json();
     if (response.success) {
-      toast.success("✅ Task Added Successfully! Redirecting...", {
+      toast.success("Task Added Successfully!", {
         duration: 1500,
         position: "top-center",
       });
@@ -35,7 +35,7 @@ export default function AddTask() {
         router.push("/");
       }, 1500);
     } else {
-      toast.error("❌ Failed to Add Task! Please try again.", {
+      toast.error("Failed to Add Task! Please try again.", {
         duration: 2000,
         position: "top-center",
       });
@@ -71,7 +71,16 @@ export default function AddTask() {
             type="date"
             name="dueDate"
             value={dueDate}
-            onChange={(e) => setDueDate(e.target.value)}
+            onChange={(e) => {
+              const selectedDate = new Date(e.target.value);
+              const today = new Date();
+              today.setHours(0, 0, 0, 0);
+              if (selectedDate < today) {
+                toast.error("Invalid date! Please select a future date.");
+              } else {
+                setDueDate(e.target.value);
+              }
+            }}
             required
             className="border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-purple-500 focus:outline-none"
           />
