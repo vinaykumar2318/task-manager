@@ -118,9 +118,9 @@ export default function Home() {
       </div>
 
       {loading ? (
-        <p className="text-gray-700 text-lg">Loading tasks...</p>
+        <p className="text-gray-700 text-lg px-24">Loading tasks...</p>
       ) : tasks.length === 0 ? (
-        <p className="text-gray-500 text-lg">No tasks available. Add a new task to get started!</p>
+        <p className="text-gray-500 text-lg px-24">No tasks available. Add a new task to get started!</p>
       ) : (
         <section className="text-gray-600 body-font">
           <div className="container mx-auto px-24 py-8">
