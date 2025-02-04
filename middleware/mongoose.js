@@ -21,11 +21,12 @@ const connectDB = (handler) => async (req, res) => {
 
   if (!cached.promise) {
     console.log("🚀 Connecting to MongoDB...");
-    const opts = {
-      bufferCommands: false,
-    };
+    // const opts = {
+    //   bufferCommands: false,
+    // };
 
-    cached.promise = mongoose.connect(MONGODB_URI, opts)
+    // cached.promise = mongoose.connect(MONGODB_URI, opts)
+    cached.promise = mongoose.connect(MONGODB_URI)
       .then((mongoose) => {
         console.log("✅ Connected to MongoDB Successfully");
         return mongoose;

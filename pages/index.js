@@ -142,7 +142,7 @@ export default function Home() {
                         <button
                           onClick={() => { setEditingTask(task); setShowModal(true); }}
                           disabled={task.isCompleted}
-                          className={`text-sm h-12 px-4 py-2 rounded-lg font-semibold bg-purple-600 ${task.isCompleted ? "cursor-not-allowed": ""} text-white shadow-md hover:bg-yellow-600`}
+                          className={`text-sm h-12 px-4 py-2 rounded-lg font-semibold bg-purple-500 ${task.isCompleted ? "cursor-not-allowed": ""} text-white shadow-md hover:bg-purple-600`}
                         >
                           ✏️ Edit
                         </button>
