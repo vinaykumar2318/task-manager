@@ -26,15 +26,13 @@ const connectDB = (handler) => async (req, res) => {
     // };
 
     // cached.promise = mongoose.connect(MONGODB_URI, opts)
-    cached.promise = mongoose.connect(MONGODB_URI)
-      .then((mongoose) => {
-        console.log("✅ Connected to MongoDB Successfully");
-        return mongoose;
-      })
-      .catch((err) => {
-        console.error("❌ MongoDB connection error:", err.message);
-        throw err;
-      });
+    cached.promise = mongoose.connect(MONGODB_URI).then((mongoose) => {
+      console.log("✅ Connected to MongoDB Successfully");
+      return mongoose;
+    }).catch((err) => {
+      console.error("❌ MongoDB connection error:", err.message);
+      throw err;
+    });
   }
 
   try {
