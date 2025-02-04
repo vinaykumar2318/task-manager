@@ -1,40 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 📝 Task Manager (Next.js + MongoDB)
 
-## Getting Started
+A simple **Task Manager** built with **Next.js** and **MongoDB**, allowing users to **add, edit, delete, and update tasks** with a clean UI.
 
-First, run the development server:
+## 🚀 Features
+- ✅ Add new tasks with **title, description, and due date**  
+- ✅ Edit existing tasks using a **modal form**  
+- ✅ Mark tasks as **completed or pending**  
+- ✅ Delete tasks from the list  
+- ✅ Prevents **past due dates**  
+- ✅ Beautiful **responsive UI with Tailwind CSS**  
 
-```bash
+---
+
+## 📂 **Project Setup**
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/yourusername/task-manager.git
+cd task-manager
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Create a .env.local File
+Inside the project root, create a .env.local file and add your MongoDB connection string:
+
+MONGO_URI=your_mongodb_connection_string
+SECRET_KEY=your_secret_key
+
+
+5️⃣ Run the Project in Development Mode
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Now, open http://localhost:3000 in your browser. 🎉
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔧 API Endpoints
+GET	/api/getTask --	Fetch all tasks
+POST /api/addTask --	Add a new task
+PUT	/api/updateTask --	Edit task details
+PUT	/api/updateStatus --	Change task status (completed/pending)
+DELETE/api/deleteTask --	Remove a task
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+🎨 Tech Stack
+Frontend: Next.js (React) + Tailwind CSS
+Backend: Node.js + Express.js
+Database: MongoDB
+State Management: React Hooks (useState, useEffect)
+Notifications: react-hot-toast
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+🔧 Project Structure
+📂 task-manager
+│── 📂 pages
+│   ├── 📜 index.js          # Main Task List Page
+│   ├── 📜 addTask.js        # Add New Task Page
+│── 📂 api
+│   ├── 📜 getTask.js        # Fetch Tasks API
+│   ├── 📜 addTask.js        # Add Task API
+│   ├── 📜 updateTask.js     # Update Task API
+│   ├── 📜 updateStatus.js   # Change Status API
+│   ├── 📜 deleteTask.js     # Delete Task API
+│── 📂 models
+│   ├── 📜 Task.js           # Mongoose Task Schema
+│── 📂 middleware
+│   ├── 📜 mongoose.js       # MongoDB Connection
+│── 📜 .env.local            # Environment Variables
+│── 📜 README.md             # Project Documentation
+│── 📜 package.json          # Dependencies & Scripts
