@@ -5,6 +5,7 @@ const handler = async (req, res) => {
   if (req.method === "GET") {
     try {
       const tasks = await Task.find({});
+      console.log(tasks);
       return res.status(200).json({ success: true, tasks });
     } catch (error) {
       console.error("Error fetching tasks:", error);
